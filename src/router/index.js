@@ -1,11 +1,16 @@
 import {createRouter, createWebHistory} from 'vue-router';
-import HomePage from '../views/HomePage.vue';
+import PostsPage from '../views/PostsPage';
 
 const routes = [
     {
         path: '/',
         name: 'home',
-        component: HomePage,
+        redirect: '/posts',
+    },
+    {
+        path: '/posts',
+        name: 'posts',
+        component: PostsPage,
     },
 ];
 

@@ -1,6 +1,6 @@
 <template>
     <div class="content-block">
-        <header></header>
+        <header-component />
 
         <main class="main">
             <router-view />
@@ -24,7 +24,7 @@
     --color-yellow: #e1bb00;
     --color-green: #01ab5d;
     /*header*/
-    --header-height: 70px;
+    --header-height: 150px;
 }
 /*media*/
 @media (max-width: 1199px) {
@@ -35,40 +35,6 @@
 @media (max-width: 767px) {
     :root {
         --header-height: 50px;
-    }
-}
-
-/*=============================*/
-/* CUSTOM PRELOAD */
-/*=============================*/
-.loader {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 999;
-    background-color: var(--color-bg);
-    animation: loader 1.2s linear;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-}
-
-@keyframes loader {
-    0% {
-        opacity: 1;
-    }
-    70% {
-        opacity: 1;
-    }
-    99% {
-        opacity: 0;
-    }
-    100% {
-        display: none;
-        visibility: hidden;
-        z-index: -10;
-        opacity: 0;
     }
 }
 
@@ -436,3 +402,9 @@ h6,
 .btn {
 }
 </style>
+<script>
+import HeaderComponent from '@/components/HeaderComponent';
+export default {
+    components: {HeaderComponent},
+};
+</script>
