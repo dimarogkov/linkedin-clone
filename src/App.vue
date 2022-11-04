@@ -27,9 +27,9 @@
     --header-height: 150px;
 }
 /*media*/
-@media (max-width: 1199px) {
+@media (max-width: 1440px) {
     :root {
-        --header-height: 60px;
+        --header-height: 130px;
     }
 }
 @media (max-width: 767px) {
