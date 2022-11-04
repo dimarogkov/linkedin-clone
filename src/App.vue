@@ -17,10 +17,12 @@
 :root {
     --color-white: #fff;
     --color-bg: #f7f8f9;
-    --color-grey: #adaeae;
+    --color-grey: #d6d6d6;
+    --color-grey-light: rgba(214, 214, 214, 0.3);
     --color-black: #1b1d1f;
     --color-text: #a9a8a8;
     --color-blue: #0058a2;
+    --color-blue-light: rgba(0, 88, 162, 0.1);
     --color-yellow: #e1bb00;
     --color-green: #01ab5d;
     /*header*/
@@ -272,9 +274,10 @@ input[type='number'] {
 .text {
     &,
     p {
-        font-size: 18px;
-        line-height: 1.5em;
-        color: var(--color-black);
+        font-size: 16px;
+        line-height: 1.4em;
+        letter-spacing: 0.2px;
+        color: var(--color-text);
     }
 
     a {
@@ -357,6 +360,12 @@ h6,
 }
 .text-upper {
     text-transform: uppercase;
+}
+.color-black {
+    color: var(--color-black);
+}
+.color-white {
+    color: var(--color-white);
 }
 /*text-line*/
 .text-line-1 {
