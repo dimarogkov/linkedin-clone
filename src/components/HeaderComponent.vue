@@ -1,7 +1,7 @@
 <template>
     <div>
         <header class="header">
-            <div class="header__layer" :class="{active: isMenuLinksOpen}" @click="closeMenuLinks"></div>
+            <div class="header__layer" :class="{active: isLayerActive}" @click="closeMenuLinks"></div>
             <div class="header__top">
                 <div class="container">
                     <div class="row">
@@ -93,10 +93,21 @@
 </template>
 
 <script setup>
-import {ref} from 'vue';
+import {computed, ref} from 'vue';
 
 const isSearchOpen = ref(false);
 const isMenuLinksOpen = ref(false);
+const isLayerActive = computed(() => {
+    if (isSearchOpen.value) {
+        return true;
+    }
+
+    if (isMenuLinksOpen.value) {
+        return true;
+    }
+
+    return false;
+});
 const headerLinks = [
     {href: '/posts', name: 'Posts'},
     {href: '/articles', name: 'Articles'},
@@ -112,7 +123,10 @@ const openMenu = () => {
     isMenuLinksOpen.value = !isMenuLinksOpen.value;
     isSearchOpen.value = false;
 };
-const closeMenuLinks = () => (isMenuLinksOpen.value = false);
+const closeMenuLinks = () => {
+    isSearchOpen.value = false;
+    isMenuLinksOpen.value = false;
+};
 </script>
 
 <style lang="scss">
@@ -160,6 +174,10 @@ const closeMenuLinks = () => (isMenuLinksOpen.value = false);
         background-color: var(--color-white);
     }
 
+    &__bottom {
+        background-color: var(--color-bg);
+    }
+
     &__top-block {
         position: relative;
         width: 100%;
@@ -196,6 +214,7 @@ const closeMenuLinks = () => (isMenuLinksOpen.value = false);
         align-items: center;
         font-size: 15px;
         font-weight: 700;
+        letter-spacing: 0.2px;
         padding-left: 15px;
         margin-left: 15px;
         border-left: 1px solid var(--color-grey);
@@ -234,6 +253,7 @@ const closeMenuLinks = () => (isMenuLinksOpen.value = false);
                 width: 100%;
                 height: 100%;
                 font-size: 15px;
+                letter-spacing: 0.2px;
                 color: var(--color-black);
                 background-color: var(--color-bg);
                 border: 1px solid var(--color-grey);
