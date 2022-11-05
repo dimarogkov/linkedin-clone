@@ -214,7 +214,6 @@ const closeMenuLinks = () => {
         align-items: center;
         font-size: 15px;
         font-weight: 700;
-        letter-spacing: 0.2px;
         padding-left: 15px;
         margin-left: 15px;
         border-left: 1px solid var(--color-grey);
@@ -253,7 +252,6 @@ const closeMenuLinks = () => {
                 width: 100%;
                 height: 100%;
                 font-size: 15px;
-                letter-spacing: 0.2px;
                 color: var(--color-black);
                 background-color: var(--color-bg);
                 border: 1px solid var(--color-grey);

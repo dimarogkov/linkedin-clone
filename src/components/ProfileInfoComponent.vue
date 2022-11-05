@@ -22,7 +22,7 @@
             </router-link>
         </div>
 
-        <ul class="profile-card__socials" v-if="pageName === '/posts'">
+        <ul class="profile-card__socials" v-if="pageName === '/profile'">
             <li v-for="social of currentUser.socials" :key="social">
                 <a :href="social.value" target="_blank" class="text">
                     <i class="lab" :class="social.icon"></i>
@@ -189,7 +189,6 @@ const currentUser = {
         font-size: 16px;
         font-weight: 700;
         color: var(--color-blue);
-        letter-spacing: 0.2px;
         padding: 0 20px;
         transition: all 0.3s;
 

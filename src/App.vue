@@ -85,6 +85,7 @@ body {
     height: 100%;
     color: var(--color-black);
     font-weight: 400;
+    letter-spacing: 0.2px;
     background-color: var(--color-bg);
 
     &.lock {
