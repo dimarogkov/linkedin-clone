@@ -22,11 +22,11 @@
             </router-link>
         </div>
 
-        <ul class="profile-card__socials" v-if="pageName === '/profile'">
+        <ul class="profile-card__socials" v-if="pageName === '/posts'">
             <li v-for="social of currentUser.socials" :key="social">
                 <a :href="social.value" target="_blank" class="text">
                     <i class="lab" :class="social.icon"></i>
-                    <span>{{ social.value }}</span>
+                    <span class="text-line-1">{{ social.value }}</span>
                 </a>
             </li>
         </ul>
@@ -196,6 +196,33 @@ const currentUser = {
         &:hover {
             background-color: var(--color-blue-light);
         }
+    }
+}
+//media
+@media (max-width: 1440px) {
+    .profile-card {
+        &__head {
+            padding: 30px;
+        }
+
+        &__img {
+            width: 110px;
+            height: 110px;
+            margin-bottom: 15px;
+        }
+
+        &__info {
+            height: 72px;
+        }
+
+        &__link {
+            height: 54px;
+        }
+    }
+}
+@media (max-width: 1199px) {
+    .profile-card {
+        display: none;
     }
 }
 </style>
