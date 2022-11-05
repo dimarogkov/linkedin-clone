@@ -62,9 +62,9 @@ const currentUser = {
 
 <style lang="scss">
 .profile-card {
-    position: relative;
+    position: fixed;
     display: block;
-    width: 100%;
+    width: 380px;
     background-color: var(--color-white);
     border: 1px solid var(--color-grey);
 
@@ -198,8 +198,15 @@ const currentUser = {
     }
 }
 //media
+@media (max-width: 1640px) {
+    .profile-card {
+        width: 305px;
+    }
+}
 @media (max-width: 1440px) {
     .profile-card {
+        width: 280px;
+
         &__head {
             padding: 30px;
         }

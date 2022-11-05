@@ -44,9 +44,9 @@ const users = [
 
 <style lang="scss">
 .keep-in-touch {
-    position: relative;
+    position: fixed;
     display: block;
-    width: 100%;
+    width: 380px;
     background-color: var(--color-white);
     border: 1px solid var(--color-grey);
     padding: 30px;
@@ -117,8 +117,14 @@ const users = [
     }
 }
 //media
+@media (max-width: 1640px) {
+    .keep-in-touch {
+        width: 305px;
+    }
+}
 @media (max-width: 1440px) {
     .keep-in-touch {
+        width: 280px;
         padding: 25px;
 
         &__title {
@@ -135,7 +141,28 @@ const users = [
 }
 @media (max-width: 1199px) {
     .keep-in-touch {
-        display: none;
+        position: relative;
+        width: 100%;
+
+        &__list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 20px;
+        }
+
+        &__item {
+            margin: 0;
+        }
+    }
+}
+@media (max-width: 575px) {
+    .keep-in-touch {
+        padding: 20px;
+
+        &__list {
+            grid-template-columns: 1fr;
+            grid-gap: 25px;
+        }
     }
 }
 </style>
