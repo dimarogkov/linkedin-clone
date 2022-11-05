@@ -116,4 +116,26 @@ const users = [
         }
     }
 }
+//media
+@media (max-width: 1440px) {
+    .keep-in-touch {
+        padding: 25px;
+
+        &__title {
+            padding-bottom: 20px;
+        }
+
+        &__img {
+            width: 46px;
+            min-width: 46px;
+            height: 46px;
+            margin-right: 16px;
+        }
+    }
+}
+@media (max-width: 1199px) {
+    .keep-in-touch {
+        display: none;
+    }
+}
 </style>
